@@ -1,0 +1,56 @@
+#formContainer {
+
+    margin: 6%;
+    padding: 6%;
+    border-radius: 6%;
+    background-color: #A96656;
+    text-align: center;
+    color: white;
+    font-family: poynter;
+    font-size: large;
+    animation: blurrisespawn 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  @keyframes blurrisespawn{
+    0%{
+      opacity: 0;
+    }
+    40%{
+      opacity: 0;
+    }
+      60%{
+        opacity: 100;
+      }
+    }
+
+    #submit{
+      width: 64px;
+      height: 10px;
+      background-color: rgb(53, 14, 210);
+      padding: 2%;
+      border-radius: 4px;
+      margin-top: 6%;
+      margin: auto;
+      
+    }
+    #submit:hover{
+      width: 64px;
+      height: 10px;
+      background-color: rgb(53, 14, 210);
+      padding: 2%;
+      border-radius: 4px;
+      margin-top: 6%;
+      margin: auto;
+      animation: upscale 0.25s ease-out;
+      scale: 1.1;
+    }
+    @keyframes upscale {
+      0% {
+        scale: 1;
+      }
+      100% {
+        scale: 1.1;
+      }
+    }
+
+  
