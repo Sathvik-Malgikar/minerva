@@ -7,7 +7,7 @@ export default function Form({setpage}){
 
 const [title, settitle] = useState("")
 const [author, setauthor] = useState("")
-const [genre, setgenre] = useState("")
+const [genre, setgenre] = useState("Fantasy")
 const [content, setcontent] = useState("")
 const [img, setimg] = useState("")
 
@@ -19,6 +19,7 @@ function handleimg(event) {
         let  storage  = getStorage(app);
         if (!img) {
         alert("Please choose a file first!")
+        return null
         }
         
         const storageRef = ref(storage, `/files/${img.name}`)
@@ -26,11 +27,17 @@ function handleimg(event) {
         return img.name
         }
     async function setpaged(){
+        if (title==''||genre==''||content==''||author=='')
+        {
+            alert("Fill all the required fields!")
+            return
+        }
         // add data d to db
-        let imgname;
-        if(img!='')
+        let imgname=null;
+        if(img!="")
         imgname = handleUpload()
-        else imgname=null
+
+        console.log("recieved from handleUpload",imgname)
         let obj = { "Title" :  title , "Author" : author, "Genre" : genre, "Content" : content, "File" : imgname};
         let  db  = getFirestore(app);
         
@@ -38,13 +45,22 @@ function handleimg(event) {
         // console.log(db)
         let colref = await collection(db,"articles")
         await addDoc(colref,obj)
-        setauthor("")
-        setcontent("")
-        setcontent("")
-        setgenre("")
-        setimg("")
 
-        setpage(1)
+        setauthor("")
+        settitle("")
+        setcontent("")
+        setgenre("Fantasy")
+        setimg("")
+        if(imgname==null){
+            setpage(1)
+        }else{
+
+            setTimeout(() => {
+                
+                setpage(1)
+            }, 3500);
+            alert("uploading media, please wait! you will be redirected to articles page once it's done")
+        }
     }
     return <>
     <h2>"Submit your article today!"</h2> 
