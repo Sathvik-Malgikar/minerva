@@ -3,7 +3,6 @@
 }
 
 .App-header {
-
   /* min-height: 100vh; */
   /* display: flex; */
   /* flex-direction: column; */
@@ -11,7 +10,6 @@
   justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
-  
 }
 
 .App-link {
@@ -23,68 +21,64 @@
   border-radius: 6%;
 }
 #logoContainer {
-display: inline-block;
-margin-top: 6%;
-animation: movelogo 2s ease-in-out;
+  display: inline-block;
+  margin-top: 6%;
+  animation: movelogo 2s ease-in-out;
 }
 @font-face {
   font-family: poynter;
   src: url(PoynterTextRegular.ttf);
 }
 
+body {
+  background-image: url(bgimg.jpg);
 
-body{
-  background-image: url(bgimg.jpg)  ;
-  
   background-size: cover;
   /* backdrop-filter: blur(10px); */
   animation: blurrise 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@keyframes blurrise{
-  0%{
-    backdrop-filter: blur(20px) brightness(25%) ;
-    
+@keyframes blurrise {
+  0% {
+    backdrop-filter: blur(20px) brightness(25%);
   }
-  100%{
-    backdrop-filter: blur(0)brightness(100%);
+  100% {
+    backdrop-filter: blur(0) brightness(100%);
   }
 }
-@keyframes movelogo{
-  0%{
+@keyframes movelogo {
+  0% {
     margin-top: 30%;
-    
   }
-  40%{
+  40% {
     margin-top: 30%;
-    
   }
-  100%{
+  100% {
     margin-top: 5%;
   }
 }
-@keyframes blurrisespawn{
-  0%{
+@keyframes blurrisespawn {
+  0% {
     opacity: 0;
   }
-  80%{
+  80% {
     opacity: 0;
   }
-    100%{
-      opacity: 100;
-    }
+  100% {
+    opacity: 100;
   }
+}
 
-  #nboard{
-    position: absolute;
-    right: 6%;
-    top: 4%;
-    animation: blurrisespawn 3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+#nboard {
+  position: absolute;
+  right: 6%;
+  top: 4%;
+  animation: blurrisespawn 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
-  #homebtn{
-    position: absolute;
-    left: 9%;
-    top: 7%;
-    animation: blurrisespawn 3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+#homebtn {
+  position: absolute;
+  left: 9%;
+  top: 7%;
+  animation: blurrisespawn 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

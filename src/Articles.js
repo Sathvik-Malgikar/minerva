@@ -29,7 +29,7 @@ export default function Articles() {
 
   function getimg(i) {
     let name = articles[i]["File"];
-    if (name == null||name.startsWith("http")) return;
+    if (name == null || name.startsWith("http")) return;
 
     const storage = getStorage(app);
     getDownloadURL(ref(storage, "files/" + name))
@@ -60,7 +60,7 @@ export default function Articles() {
               <h5>{e.Genre}</h5>
               -By <h4 style={{ display: "inline-block" }}>{e.Author}</h4>
               <p style={{ fontSize: 30 }}>{e.Content}</p>
-              {e.File != null ? <img key={i} src={e.File} style={{width:"70%"}}  ></img> : <></>}
+              {e.File != null ? <img key={i} src={e.File} style={{ width: "70%" }}  ></img> : <></>}
               <a>
                 <h4>Click here to go to full article</h4>
               </a>

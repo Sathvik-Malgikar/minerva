@@ -1,17 +1,13 @@
-#art_container{
-   
-    padding: 3%;
-    margin: 6%;
-    text-align: center;
-    
+#art_container {
+  padding: 3%;
+  margin: 6%;
+  text-align: center;
 }
-#art_container > div{
-   
-    background-image: url(canvas_texture.jpg);
-    border-radius: 5%;
-    padding: 2%;
-    margin: 3%;
-    text-align: center;
-    color: black;
-    
+#art_container > div {
+  background-image: url(canvas_texture.jpg);
+  border-radius: 5%;
+  padding: 2%;
+  margin: 3%;
+  text-align: center;
+  color: black;
 }
